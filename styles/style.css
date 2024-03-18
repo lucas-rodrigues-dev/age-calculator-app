@@ -1,0 +1,180 @@
+/* Propriedades Globais */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;;
+}
+
+:root {
+    --purple: hsl(259, 100%, 65%);
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%); 
+    --light-grey: hsl(0, 0%, 86%);
+    --smoke-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+    --light-red: hsl(0, 100%, 67%);
+    --light-green: hsl(177, 90%, 49%);
+}
+
+body {
+    background: var(--light-grey);
+    text-align: center;
+}
+
+/* Estilização do container do formulario e do formulario */
+.age-calculator-container {
+    background: var(--off-white);
+    max-width: 650px;
+    height: 500px;
+    margin: 4rem auto;
+    border-radius: .925rem;
+    position: relative;
+}
+
+.age-calculator-form-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.age-calculator-form input::-webkit-inner-spin-button,
+.age-calculator-form input::-webkit-outer-spin-button {
+    display: none;
+}
+
+.input-group input:focus {
+    outline: none;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    color: var(--smoke-grey);
+    text-align: left;
+    margin-left: 6px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.input-group input {
+    color: var(--off-black);
+    font-weight: 900;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid var(--light-grey);
+    border-radius: 5px;
+    width: 100px;
+    margin: 0 5px;
+}
+
+/* Estilização do botão de enviar*/
+.age-calculator-result-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.age-calculator-result-button:hover svg {
+    -webkit-animation: animate-svg-stroke-1 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+    animation: animate-svg-stroke-1 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+}
+
+/* Estilização do icone do botão de enviar */
+.age-calculator-arrow-icon {
+    background: var(--purple);
+    height: 75px;
+    width: 70px;
+    clip-path: circle(30px);
+    position: absolute;
+    top: 30%;
+    right: 50px;
+    transform: translateY(-50%);    
+}
+
+.age-calculator-arrow-icon svg {
+    margin-top: 10px;
+}
+
+/* Animação do botão de enviar */
+ @-webkit-keyframes animate-svg-stroke-1 {
+    0% {
+      stroke-dashoffset: 116.38494873046875px;
+      stroke-dasharray: 116.38494873046875px;
+    }
+  
+    100% {
+      stroke-dashoffset: 0;
+      stroke-dasharray: 116.38494873046875px;
+    }
+  }
+  
+  @keyframes animate-svg-stroke-1 {
+    0% {
+      stroke-dashoffset: 116.38494873046875px;
+      stroke-dasharray: 116.38494873046875px;
+    }
+  
+    100% {
+      stroke-dashoffset: 0;
+      stroke-dasharray: 116.38494873046875px;
+    }
+  }
+  
+  .svg-elem-1 {
+    -webkit-animation: animate-svg-stroke-1 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+    animation: animate-svg-stroke-1 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+  }
+  
+/* Estilizaçõo do Resultado */
+.age-calculator-result-container {
+    line-height: 7rem;   
+}
+
+.age-calculator-result span {
+    color: var(--purple);
+    font-size: 5rem;
+}
+
+.age-calculator-result {
+    color: var(--off-black);  
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+/* Estilização da mensagem de erro do mês */
+#error-message {
+    color: var(--light-red); 
+    display: none;
+    font-size: 13px;
+    width: 8rem;
+}
+
+/* Estilização da mensagem de erro do limite de dias e meses */
+#day-limit-error-message,
+#month-limit-error-message,
+#year-error-message {
+    display: none;
+    color: var(--light-red); 
+    font-size: 13px;
+    width: 8rem;
+}
+
+/* Estilização dos créditos do projeto */
+
+.attribution a {
+    text-decoration: none;
+    color: var(--purple);
+    transition: 500ms;
+}
+
+.attribution a:hover {
+    color: var(--light-green);
+    transition: 500ms;
+}

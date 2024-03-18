@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="./styles/style.css">
+	<title>Calculadora de Idade</title>
+</head>
+<body>
+	<div id="age-calculator-container" class="age-calculator-container">
+		<div class="age-calculator-form-container">
+			<form class="age-calculator-form" action="">
+				<div class="age-calculator-form-container">
+					<div class="input-group">
+						<label for="day">Dia</label>
+						<input name="day" type="number" id="day" required>
+						<div id="error-message">O Mês de fevereiro não pode ter mais de 29 dias.</div>
+						<div id="day-limit-error-message">O campo dia não pode ultrapassar 31 dias</div>
+					</div>
+				
+					<div class="input-group">
+						<label for="month">Mês</label>
+						<input name="month" type="number" id="month" required>
+						<div id="month-limit-error-message">O campo mês não pode ultrapassar 12 meses</div>
+					</div>
+				
+					<div class="input-group">
+						<label for="year">Ano</label>
+						<input name="year" type="number" id="year" required>
+						<div id="year-error-message">O campo ano não pode ultrapassar o ano atual</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="submit-button" class="age-calculator-arrow-icon">
+			<button onclick="" class="age-calculator-result-button">
+				<svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" 
+				stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>
+			</button>
+		</div>
+		<div class="age-calculator-result-container">
+			<p class="age-calculator-result"><span class="age-calculator-result-number">--</span> anos</p>
+			<p class="age-calculator-result"><span class="age-calculator-result-number">--</span> meses</p>
+			<p class="age-calculator-result"><span class="age-calculator-result-number">--</span> dias</p>
+		</div>
+	</div>
+  
+	<div class="attribution">
+		Development by <a href="https://www.instagram.com/lucas.dev.exe" target="_blank">Lucas</a>
+	</div>
+	<script src="./scripts/script.js"></script>
+</body>
+</html>
