@@ -140,9 +140,9 @@ function birthCalc() {
         months--;
     }
 
-    document.querySelector('.age-calculator-result-container .age-calculator-result:nth-child(1) .age-calculator-result-number').textContent = anos;
-    document.querySelector('.age-calculator-result-container .age-calculator-result:nth-child(2) .age-calculator-result-number').textContent = meses;
-    document.querySelector('.age-calculator-result-container .age-calculator-result:nth-child(3) .age-calculator-result-number').textContent = dias;
+    document.querySelector('.age-calculator-result-container .age-calculator-result:nth-child(1) .age-calculator-result-number').textContent = years;
+    document.querySelector('.age-calculator-result-container .age-calculator-result:nth-child(2) .age-calculator-result-number').textContent = months;
+    document.querySelector('.age-calculator-result-container .age-calculator-result:nth-child(3) .age-calculator-result-number').textContent = days;
 }
 
-    document.getElementById('submit-button').addEventListener('click', calcBirth);
+    document.getElementById('submit-button').addEventListener('click', birthCalc);
