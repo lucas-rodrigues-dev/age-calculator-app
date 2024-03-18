@@ -50,12 +50,12 @@ function currentYearValidation() {
     if (yearInputValue > currentYear) {
         yearErrorMessage.style.display = 'block';
         yearInput.style.borderColor = 'red';
-        ageCalculatorContainer.style.height = '560px';
+        ageCalculatorContainer.style.height = '580px';
         submitButton.style.display = 'none';
     } else {
         yearErrorMessage.style.display = 'none';
         yearInput.style.borderColor = '';
-        submitButton.style.display = '';
+        submitButton.style.display = 'block';
     }
 }
 
@@ -75,7 +75,7 @@ function validateDayInput() {
         submitButton.style.display = 'none';
     } else {
         dayLimitErrorMessage.style.display = 'none';
-        submitButton.style.display = '';
+        submitButton.style.display = 'block';
     }
 }
 
@@ -88,7 +88,6 @@ function validateMonthInput() {
         submitButton.style.display = 'none';
     } else {
         monthLimitErrorMessage.style.display = 'none';
-        submitButton.style.display = '';
     }
 }
 
@@ -107,8 +106,43 @@ function validateDate () {
         errorMessage.style.display = 'block';
         dayInput.style.borderColor = 'red';
         ageCalculatorContainer.style.height = '580px';
+        submitButton.style.display = 'none';
     } else {
         errorMessage.style.display = 'none';
         dayInput.style.borderColor = '';
+        submitButton.style.display = '';
     }
 }
+
+// Enviar os dados e calcular
+function calcularIdade() {
+    const dia = parseInt(document.getElementById('day').value);
+    const mes = parseInt(document.getElementById('month').value);
+    const ano = parseInt(document.getElementById('year').value);
+
+    const dataAtual = new Date();
+    const anoAtual = dataAtual.getFullYear();
+    const mesAtual = dataAtual.getMonth() + 1;
+    const diaAtual = dataAtual.getDate();
+
+    let anos = anoAtual - ano;
+    let meses = mesAtual - mes;
+    let dias = diaAtual - dia;
+
+    if (meses < 0 || (meses === 0 && dias < 0)) {
+        anos--;
+        meses += 12;
+    }
+
+    if (dias < 0) {
+        const ultimoDiaDoMes = new Date(anoAtual, mesAtual - 1, 0).getDate();
+        dias += ultimoDiaDoMes;
+        meses--;
+    }
+
+    document.querySelector('.age-calculator-result-container .age-calculator-result:nth-child(1) .age-calculator-result-number').textContent = anos;
+    document.querySelector('.age-calculator-result-container .age-calculator-result:nth-child(2) .age-calculator-result-number').textContent = meses;
+    document.querySelector('.age-calculator-result-container .age-calculator-result:nth-child(3) .age-calculator-result-number').textContent = dias;
+}
+
+    document.getElementById('submit-button').addEventListener('click', calcularIdade);
