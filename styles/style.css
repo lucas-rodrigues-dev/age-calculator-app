@@ -21,7 +21,7 @@ body {
     text-align: center;
 }
 
-/* Estilização do container do formulario e do formulario */
+/* Estilização do container do formulario e o formulario */
 .age-calculator-container {
     background: var(--off-white);
     max-width: 650px;
@@ -176,4 +176,37 @@ body {
 .attribution a:hover {
     color: var(--light-green);
     transition: 500ms;
+}
+
+@media screen and (max-width: 800px) {
+    .age-calculator-container {
+        background: var(--off-white);
+        max-width: 350px;
+        height: 550px;
+        margin: 4rem auto;
+        border-radius: .925rem;
+        position: relative;
+    }
+
+    .input-group input {
+        color: var(--off-black);
+        font-weight: 900;
+        font-size: 20px;
+        padding: 10px;
+        border: 1px solid var(--light-grey);
+        border-radius: 5px;
+        width: 75px;
+        margin: 0 5px;
+    }
+
+    .age-calculator-arrow-icon {
+        background: var(--purple);
+        height: 75px;
+        width: 70px;
+        clip-path: circle(30px);
+        position: absolute;
+        top: 93%;
+        right: 40%;
+        transform: translateY(-50%);    
+    }
 }

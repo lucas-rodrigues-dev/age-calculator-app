@@ -115,10 +115,10 @@ function validateDate () {
 }
 
 // Enviar os dados e calcular
-function birthCalc() {
-    const calcDay = parseInt(document.getElementById('day').value);
-    const calcMonth = parseInt(document.getElementById('month').value);
-    const calcYear = parseInt(document.getElementById('year').value);
+function calculateAge() {
+    const day = parseInt(document.getElementById('day').value);
+    const month = parseInt(document.getElementById('month').value);
+    const year = parseInt(document.getElementById('year').value);
 
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
@@ -135,8 +135,8 @@ function birthCalc() {
     }
 
     if (days < 0) {
-        const firstDayMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
-        days += lastDayMonth;
+        const lastDayOfMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
+        days += lastDayOfMonth;
         months--;
     }
 
@@ -145,4 +145,5 @@ function birthCalc() {
     document.querySelector('.age-calculator-result-container .age-calculator-result:nth-child(3) .age-calculator-result-number').textContent = days;
 }
 
-    document.getElementById('submit-button').addEventListener('click', birthCalc);
+document.getElementById('submit-button').addEventListener('click', calculateAge);
+
