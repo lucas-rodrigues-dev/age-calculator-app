@@ -115,29 +115,29 @@ function validateDate () {
 }
 
 // Enviar os dados e calcular
-function calcularIdade() {
-    const dia = parseInt(document.getElementById('day').value);
-    const mes = parseInt(document.getElementById('month').value);
-    const ano = parseInt(document.getElementById('year').value);
+function birthCalc() {
+    const calcDay = parseInt(document.getElementById('day').value);
+    const calcMonth = parseInt(document.getElementById('month').value);
+    const calcYear = parseInt(document.getElementById('year').value);
 
-    const dataAtual = new Date();
-    const anoAtual = dataAtual.getFullYear();
-    const mesAtual = dataAtual.getMonth() + 1;
-    const diaAtual = dataAtual.getDate();
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth() + 1;
+    const currentDay = currentDate.getDate();
 
-    let anos = anoAtual - ano;
-    let meses = mesAtual - mes;
-    let dias = diaAtual - dia;
+    let years = currentYear - year;
+    let months = currentMonth - month;
+    let days = currentDay - day;
 
-    if (meses < 0 || (meses === 0 && dias < 0)) {
-        anos--;
-        meses += 12;
+    if (months < 0 || (months === 0 && days < 0)) {
+        years--;
+        months += 12;
     }
 
-    if (dias < 0) {
-        const ultimoDiaDoMes = new Date(anoAtual, mesAtual - 1, 0).getDate();
-        dias += ultimoDiaDoMes;
-        meses--;
+    if (days < 0) {
+        const firstDayMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
+        days += lastDayMonth;
+        months--;
     }
 
     document.querySelector('.age-calculator-result-container .age-calculator-result:nth-child(1) .age-calculator-result-number').textContent = anos;
@@ -145,4 +145,4 @@ function calcularIdade() {
     document.querySelector('.age-calculator-result-container .age-calculator-result:nth-child(3) .age-calculator-result-number').textContent = dias;
 }
 
-    document.getElementById('submit-button').addEventListener('click', calcularIdade);
+    document.getElementById('submit-button').addEventListener('click', calcBirth);
